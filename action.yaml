@@ -14,8 +14,6 @@ outputs:
     description: "Current Version"
     value: ${{ steps.package-version.outputs.result }}
 
-
-
 runs:
   using: composite
   steps:
