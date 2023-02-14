@@ -1,5 +1,7 @@
 # GitHub Action - Upgrade Version
 
+[![Lint](https://github.com/GrantFS/actions-upgrade-version/actions/workflows/lint.yaml/badge.svg)](https://github.com/GrantFS/actions-upgrade-version/actions/workflows/lint.yaml)
+
 Upgrade the current version of NPM/Release using [standard-version](https://www.npmjs.com/package/standard-version) and commit the changes to the branch provided
 
 ## Usage
