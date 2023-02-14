@@ -49,4 +49,4 @@ npm i standard-version
 
 | Output           | Description            |
 |------------------------------|-------------------------------------|
-| current-version     | New version |
+| current-version     | New version! |
