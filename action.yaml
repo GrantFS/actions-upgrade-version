@@ -18,6 +18,7 @@ runs:
   using: "composite"
   steps:
     - name: Branch
+      working-directory: ${{ inputs.working-directory }}
       shell: bash
       run: git checkout "$GITHUB_HEAD_REF"
 
