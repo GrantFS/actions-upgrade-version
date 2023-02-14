@@ -32,11 +32,34 @@ npm i standard-version
 
 ```yaml
 
-      - name: Upgrade Version
-        uses:  ./.github/actions/upgrade-version
+name: Version
+
+on:
+  pull_request:
+    branches:
+      - main
+
+
+permissions:
+  id-token: write
+  contents: write
+  pull-requests: write
+  actions: read
+
+jobs:
+  main-version:
+    name: Version
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head_branch }}
+
+      - name: upgrade
+        uses: GrantFS/actions-upgrade-version@V0.0.3
         with:
           github-user: ${{ github.actor }}
-          working-directory: "/src"
 
 ```
 
