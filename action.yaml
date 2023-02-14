@@ -17,7 +17,7 @@ outputs:
 
 
 runs:
-  using: composite
+  using: "composite"
   steps:
     - name: Branch
       shell: bash
@@ -36,19 +36,16 @@ runs:
         git config --global user.name "${{ inputs.github-user }}"
 
     - name: Update Version
-      working-directory: ${{ inputs.working-directory }}
       shell: bash
       run: npm run release
 
     - name: Push version
-      working-directory: ${{ inputs.working-directory }}
       shell: bash
       run: git push
 
     - name: Get Version
-      id: package-version
-      working-directory: ${{ inputs.working-directory }}
       uses: actions/github-script@v6
+      id: package-version
       with:
         result-encoding: string
         script: return require('./package.json').version
